@@ -20,22 +20,12 @@ public class GoogleTest {
 
 	WebDriver driver;
 	WebDriverWait wait;
+	
 	@BeforeTest
 	public void setup()
 	{
-	    String browsername = System.getProperty("Browser","Chrome");
-
-	    if(browsername.equalsIgnoreCase("Chrome"))
-	    {
-	        WebDriverManager.chromedriver().setup();
-	        driver = new ChromeDriver();
-	    }
-	    else if(browsername.equalsIgnoreCase("Edge"))
-	    {
-	        WebDriverManager.edgedriver().setup();
-	        driver = new EdgeDriver();
-	    }
-
+	   WebDriverManager.chromedriver().setup();
+	   driver=new ChromeDriver();
 	    wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
