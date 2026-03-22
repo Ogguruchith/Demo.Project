@@ -6,10 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -18,13 +20,20 @@ public class GoogleTest {
 
 	WebDriver driver;
 	WebDriverWait wait;
-	
+	@Parameters("Browser")
 	@BeforeTest
-	public void  setup()
+	public void  setup(String browsername)
 	{
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-	
+		if(browsername.contains("Chrome"))
+		{
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver();
+		}
+		else if(browsername.contains("Edge"))
+		{
+			WebDriverManager.edgedriver().setup();
+			driver=new EdgeDriver();
+		}
 		wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 	}
