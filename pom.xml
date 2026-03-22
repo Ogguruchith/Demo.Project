@@ -88,7 +88,7 @@
 
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>test.xml</suiteXmlFile>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
 						<browser>${Browser}</browser>
@@ -100,10 +100,4 @@
 		</plugins>
 	</build>
 
-</project>
-
-	
-	
-	
-	
-	
+</project>	
