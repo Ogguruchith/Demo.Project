@@ -21,9 +21,10 @@ public class GoogleTest {
 	WebDriver driver;
 	WebDriverWait wait;
 	@BeforeTest
-	@Parameters("Browser")
-	public void setup(String browsername)
+	public void setup()
 	{
+	    String browsername = System.getProperty("Browser","Chrome");
+
 	    if(browsername.equalsIgnoreCase("Chrome"))
 	    {
 	        WebDriverManager.chromedriver().setup();
