@@ -24,7 +24,7 @@ public class GoogleTest {
 	@BeforeTest
 	public void setup() {
 
-	    String browser = System.getProperty("Browser", "Chrome");
+	    String browser = System.getProperty("browser", "Chrome");
 
 	    if(browser.equalsIgnoreCase("Chrome")) {
 	        WebDriverManager.chromedriver().setup();
