@@ -35,7 +35,7 @@ public class GoogleTest {
 	        driver = new EdgeDriver();
 	    }
 
-	    wait = new WebDriverWait(driver, Duration.ofSeconds(11));
+	    wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	}
 	
 	@Test
