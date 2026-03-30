@@ -25,4 +25,5 @@ pipeline {
             emailext body: 'summary see pipelinstatus', subject: 'pipeline status', to: 'ogguruchith27@gmail.com'
         }
     }
+
 }
